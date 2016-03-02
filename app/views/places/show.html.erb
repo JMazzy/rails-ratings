@@ -1,0 +1,64 @@
+<h2>Profile</h2>
+
+<hr>
+
+<section class="row">
+  <section class="col-md-6">
+    <h4>Name</h4>
+  </section>
+  <section class="col-md-6">
+    <%= "#{@place.name}" %>
+  </section>
+</section>
+
+<hr>
+
+<section class="row">
+  <section class="col-md-6">
+    <h4>Description</h4>
+  </section>
+  <section class="col-md-6">
+    <%= "#{@place.description}" %>
+  </section>
+</section>
+
+<hr>
+
+<section class="row">
+  <section class="col-md-6">
+    <h4>Address</h4>
+  </section>
+  <section class="col-md-6">
+    <p><%= @place.street_address %></p>
+    <p><%= "#{@place.city}, #{@place.state} #{@place.zip_code}" %></p>
+    <p><%= "#{@place.country}" %></p>
+    <p><%= @place.phone_number %></p>
+  </section>
+</section>
+
+<hr>
+
+<h5><%= link_to "Edit This Place", edit_place_path( @place ) %></h5>
+<h5><%= link_to "Delete This Place", place_path( @place ), method: :delete %></h5>
+
+<hr>
+
+<section class="row">
+  <section class="col-md-6">
+    <h4>Add your rating</h4>
+  </section>
+  <section class="col-md-6">
+    <%= render partial: "ratings/form" %>
+  </section>
+</section>
+
+<section class="row">
+  <section class="col-md-6">
+    <h4>Ratings</h4>
+  </section>
+  <section class="col-md-6">
+    <% @ratings.each do |rating| %>
+      <%= render partial: "ratings/rating", locals: { rating: rating } %>
+    <% end %>
+  </section>
+</section>

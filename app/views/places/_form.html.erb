@@ -1,0 +1,45 @@
+<%= form_for(@place) do |f| %>
+  <div class="form-group">
+    <h4><%= f.label "Name" %></h4>
+    <h4><%= f.text_field :name, class: "form-control"  %></h4>
+  </div>
+
+  <div class="form-group">
+    <h4><%= f.label "Description" %></h4>
+    <h4><%= f.text_field :description, class: "form-control"  %></h4>
+  </div>
+
+  <div class="form-group">
+    <h4><%= f.label "Street Address" %></h4>
+    <h4><%= f.text_field :street_address, class: "form-control"  %></h4>
+  </div>
+
+  <div class="form-group">
+    <h4><%= f.label "City" %></h4>
+    <h4><%= f.text_field :city, class: "form-control" %></h4>
+  </div>
+
+  <div class="form-group">
+    <h4><%= f.label "State" %></h4>
+    <h4><%= f.text_field :state, class: "form-control" %></h4>
+  </div>
+
+  <div class="form-group">
+    <h4><%= f.label "Country" %></h4>
+    <h4><%= f.text_field :country, class: "form-control" %></h4>
+  </div>
+
+  <div class="form-group">
+    <h4><%= f.label "Zip Code" %></h4>
+    <h4><%= f.text_field :zip_code, class: "form-control" %></h4>
+  </div>
+
+  <div class="form-group">
+    <h4><%= f.label "Phone Number" %></h4>
+    <h4><%= f.phone_field :phone_number, class: "form-control" %></h4>
+  </div>
+
+  <div class="form-group">
+    <h4><%= f.submit "Submit", class: "btn btn-success"  %></h4>
+  </div>
+<% end %>
